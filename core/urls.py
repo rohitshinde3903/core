@@ -16,14 +16,27 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from core.settings import STATICFILES_DIR
 from home.views import *
+from vege.views import *
 # from vege.models import receipe
 from vege.views import *
+from django.conf import settings
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', home, name="home"),
     path('about/', about, name='about'),
     path('contact/', contact, name='contact'),
     path('receipe/', receipes, name='receipe'),
+    path('delete-receipe/<id>/', delete_receipe, name='delete-receipe'),
+    
     path("admin/", admin.site.urls),
 ]
+
+if settings.DEBUG:
+        urlpatterns += static(settings.MEDIA_URL,
+                              document_root=settings.MEDIA_ROOT)
+
+urlpatterns += staticfiles_urlpatterns()
