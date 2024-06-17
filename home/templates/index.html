@@ -19,6 +19,9 @@
         </style>
     </head>
     <body>
+        {% block start %}
+        
+        
         <a href="/contact/">Conatct</a>
         <a href="/about/">About</a>
         <h1>DATA</h1>
@@ -43,7 +46,7 @@
                 </td>
             </tr>
             {%endfor%}
-        
+        {% endblock  %}
         
         <script src="" async defer></script>
     </body>
