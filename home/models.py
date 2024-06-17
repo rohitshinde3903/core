@@ -9,7 +9,10 @@ class Students(models.Model):
     adress = models.TextField(null=True)
     image = models.ImageField()
     file = models.FileField()
-    
+
+class Cars(models.Model):
+    CarName= models.CharField(max_length=500)
+    Speed = models.IntegerField()
     
     
     
