@@ -6,7 +6,7 @@ class Students(models.Model):
     name = models.CharField(max_length = 150)
     age = models.IntegerField()
     Email = models.EmailField()
-    adress = models.TextField()
+    adress = models.TextField(null=True)
     image = models.ImageField()
     file = models.FileField()
     
